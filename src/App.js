@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import MemoWrapper from "./components/Memo/MemoWrapper";
+import HeavyCalculation from "./components/Memo/HeavyCalculation";
+import LoginPage from "./components/LinkedIn/LoginPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className="App">
+        <header className="App-header">
+          <div className={"header-content"}>
+            {/*<img*/}
+            {/*  className={"logo"}*/}
+            {/*  alt={"logo"}*/}
+            {/*  src="https://img.icons8.com/cotton/64/000000/system-task.png"*/}
+            {/*/>*/}
+            <h1>Login</h1>
+          </div>
+        </header>
+        {/*<MemoWrapper />*/}
+        {/*<div className={"hr"}>*/}
+        {/*  <hr />*/}
+        {/*</div>*/}
+        {/*<HeavyCalculation />*/}
+      </div>
+      <LoginPage />
+    </React.Fragment>
   );
 }
 

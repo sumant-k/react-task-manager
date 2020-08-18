@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  margin: auto;
+  text-align: center;
+  width: 384px;
+  min-height: calc(100vh - 500px);
+}
+.container .form-group {
+  background-color: white;
+  position: relative;
+  margin: 14px 0;
+  padding: 0;
+}
+.container .form-control {
+  background-color: transparent !important;
+}
+.form-group label {
+  color: black;
+  font-size: 1.2rem;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  display: block;
+  padding: 14px 0 0 12px;
+  transition: 0.2s all;
+  box-sizing: border-box;
+  font-weight: 400;
+  line-height: 1.33333;
+  background: transparent;
+}
+.form-group input {
+  outline: none;
+  height: 56px;
+  font-size: 1.2rem;
+  line-height: 1.33333;
+  width: 100%;
+  position: relative;
+  padding: 28px 12px 6px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin: 0;
+  border: 2px solid transparent;
+  z-index: 1;
+  background-color: transparent;
+}
+.form-group input:focus {
+  border: 2px solid #e70b82;
+  box-shadow: 0 0 0 1px #e70b82;
+}
+.form-group input:focus + label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  top: -10px;
+}
+.form-group input:valid + label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  top: -10px;
+}
+
+.button-passwd {
+  /*background: white;*/
+  margin: 0;
+  border: none;
+  position: absolute;
+  right: 10px;
+  line-height: 1.33333;
+  top: 14px;
+  color: #e70b82;
+  cursor: pointer !important;
+  transition: 0.4s;
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 4px;
+  z-index: 2;
+}
+.button-passwd:hover {
+  background: #f6b5d9;
+  color: #e70b82;
+}
+.button-passwd:active {
+  background: #f6b5d9;
+  color: #e70b82;
+}
+.form-group button {
+  width: 100%;
+  height: 52px;
+  margin: 10px 0;
+  padding: 0;
+  font-size: 1.2rem !important;
+  background: #e70b82;
+  color: white;
+  border-radius: 0;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 2px solid #e70b82;
+}
+.form-group button:hover {
+  border: 2px solid #e58cba;
+}
+.form-group button:active {
+  border: 2px solid #e58cba;
+}
+.signin-extra a {
+  cursor: pointer;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  transition: 0.2s;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.signin-extra a:hover {
+  /*background-color: #ffa7c6;*/
+  /*border: 1px solid #ec329a;*/
+  text-decoration: underline;
+  color: #ec329a;
+}
+p {
+  font-size: 1.2rem;
+}
+
+.app-footer {
+  display: flex;
+  width: 100%;
+  height: 72px;
+  background-color: #e70b82;
+  color: white;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+    justify-content: center;
+}
