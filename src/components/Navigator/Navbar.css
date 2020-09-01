@@ -1,0 +1,75 @@
+.task-manager-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: black;
+    z-index: 50;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo-container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo-container .logo{
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
+}
+.app-name h2{
+    font-size: 1.4rem;
+
+}
+.content-right{
+
+}
+.btn{
+    color: #e70b82;
+    background: white;
+    /*display: inline-block;*/
+    padding: 10px;
+    border: 1px solid #e70b82;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    margin: 0;
+    transition: 0.4s all;
+}
+.btn:hover{
+    border: 1px solid #e58cba;
+    background-color: #e70b82;
+    color: white;
+}
+.task-manager-nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav-ul{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: inherit;
+    margin: 0 1.5rem !important;
+}
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-ul li{
+    margin: 0 1.2rem;
+    height: 100%;
+    font-size: 1.4rem;
+}
+.nav-ul a{
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    transition: .3s;
+}
+.nav-ul a:hover{
+    color: #e70b82;
+}

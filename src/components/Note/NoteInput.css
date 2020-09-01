@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap");
+.note {
+  position: relative;
+  margin: 0;
+  padding: 6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.note-container {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 70%;
+}
+.input {
+  font-family: "Kalam", cursive;
+  width: 100%;
+  margin: 0 !important;
+  border: none;
+  outline: none;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+}
+.note textarea {
+  font-size: 2rem !important;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  font-weight: 500 !important;
+}
+.note input {
+  font-size: 3rem;
+  font-weight: 500 !important;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.note textarea:hover {
+  border: none;
+  outline: none;
+}
+.close {
+  position: absolute;
+  display: inline-block;
+  background-color: white;
+  border-radius: 50%;
+  color: #282c34;
+  /* padding: 1rem; */
+  font-size: 1.2rem;
+  top: -32px;
+  right: -32px;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.6;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close:hover {
+  background-color: #e70b82;
+  color: white;
+}
+.select-note-color {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #e70b82;
+}
+.select-note-color::after {
+  content: "Pick color";
+  margin: 0 0.5rem 0;
+}
+.select-note-color button,
+ul,
+li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.select-note-color button {
+  z-index: 6;
+  box-sizing: border-box;
+}
+.select-note-color ul {
+  list-style: none;
+
+  text-align: left;
+  width: 100px;
+  top: 3.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s all;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  background-color: #282c34;
+  color: white;
+}
+/*.select-note-color ul::after{*/
+/*    content: "";*/
+/*    width: 1rem;*/
+/*    height: 1rem;*/
+/*    background-color: white;*/
+/*    position: absolute;*/
+/*    top: -10px;*/
+/*    left: 0.5rem;*/
+/*    transform: rotate(45deg);*/
+/*    z-index: -10;*/
+/*}*/
+
+.select-note-color ul li {
+  padding: 10px 10px !important;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.color-picker {
+  display: inline-block;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.select-note-color:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  top: 4.5rem;
+}
+.select-note-color ul li:hover {
+  background-color: #e70b82;
+  color: white;
+}

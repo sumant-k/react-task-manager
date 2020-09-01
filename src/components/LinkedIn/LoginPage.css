@@ -3,14 +3,11 @@
 * {
   font-family: "Lato", sans-serif;
 }
-
-.container {
-  margin: auto;
-  text-align: center;
-  width: 384px;
-  min-height: calc(100vh - 500px);
+.bg-dark{
+  background-color: #282c34 !important;
 }
-.container .form-group {
+
+.container .input-container {
   background-color: white;
   position: relative;
   margin: 14px 0;
@@ -19,9 +16,9 @@
 .container .form-control {
   background-color: transparent !important;
 }
-.form-group label {
-  color: black;
-  font-size: 1.2rem;
+.input-container label {
+  color: #4e4e4e;
+  font-size: 1.1rem;
   position: absolute;
   margin: 0;
   top: 0;
@@ -34,7 +31,8 @@
   line-height: 1.33333;
   background: transparent;
 }
-.form-group input {
+.input-container input {
+  color: black !important;
   outline: none;
   height: 56px;
   font-size: 1.2rem;
@@ -49,19 +47,22 @@
   z-index: 1;
   background-color: transparent;
 }
-.form-group input:focus {
+.input-container input:focus {
   border: 2px solid #e70b82;
   box-shadow: 0 0 0 1px #e70b82;
 }
-.form-group input:focus + label {
+.input-container input:focus + label {
   font-size: 0.9rem;
   font-weight: 400;
   top: -10px;
 }
-.form-group input:valid + label {
+.input-container input:valid + label {
   font-size: 0.9rem;
   font-weight: 400;
   top: -10px;
+}
+.input-container input:-webkit-autofill {
+  z-index: 0;
 }
 
 .button-passwd {
@@ -88,7 +89,8 @@
   background: #f6b5d9;
   color: #e70b82;
 }
-.form-group button {
+
+.input-container button {
   width: 100%;
   height: 52px;
   margin: 10px 0;
@@ -101,10 +103,10 @@
   transition: 0.4s;
   border: 2px solid #e70b82;
 }
-.form-group button:hover {
+.input-container button:hover {
   border: 2px solid #e58cba;
 }
-.form-group button:active {
+.input-container button:active {
   border: 2px solid #e58cba;
 }
 .signin-extra a {
@@ -137,5 +139,9 @@ p {
   -ms-flex-align: center;
   align-items: center;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
-    justify-content: center;
+  justify-content: center;
+}
+.login{
+  position: relative;
+  top: 10rem;
 }

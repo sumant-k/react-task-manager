@@ -1,31 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import MemoWrapper from "./components/Memo/MemoWrapper";
-import HeavyCalculation from "./components/Memo/HeavyCalculation";
-import LoginPage from "./components/LinkedIn/LoginPage";
+import "./Normalize.css";
+import ProtectedRoute from "./Containers/Routes/ProtectedRoute";
+import Note from "./Containers/Note";
+import { BrowserRouter, Route } from "react-router-dom";
+import Login from "./Containers/Login";
+import DuckDuckGo from "./components/DuckDuckGo/DuckDuckGo";
 
 function App() {
   return (
     <React.Fragment>
-      <div className="App">
-        <header className="App-header">
-          <div className={"header-content"}>
-            {/*<img*/}
-            {/*  className={"logo"}*/}
-            {/*  alt={"logo"}*/}
-            {/*  src="https://img.icons8.com/cotton/64/000000/system-task.png"*/}
-            {/*/>*/}
-            <h1>Login</h1>
-          </div>
-        </header>
-        {/*<MemoWrapper />*/}
-        {/*<div className={"hr"}>*/}
-        {/*  <hr />*/}
-        {/*</div>*/}
-        {/*<HeavyCalculation />*/}
-      </div>
-      <LoginPage />
+      <BrowserRouter>
+        <Route path={"/"} exact component={Login} />
+        {/*<ProtectedRoute path={"/notes"} Component={Note} />*/}
+        {/*<DuckDuckGo />*/}
+      </BrowserRouter>
     </React.Fragment>
   );
 }
