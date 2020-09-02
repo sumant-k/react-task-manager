@@ -1,7 +1,7 @@
 import {
-  REQUEST_LOGIN,
-  REQUEST_LOGIN_FAILED,
-  REQUEST_LOGIN_SUCCESS,
+  GET_NOTES,
+  GET_NOTES_FAILED,
+  GET_NOTES_SUCCESS,
 } from "../actions/actionType";
 import {
   ERROR,
@@ -12,27 +12,25 @@ import {
 
 const initialState = {
   status: "INIT",
-  isLoading: false,
+  isLoading: true,
 };
-export default function loginReducer(state = initialState, action) {
+export default function getNotesReducer(state = initialState, action) {
   switch (action.type) {
-    case REQUEST_LOGIN:
+    case GET_NOTES:
       let reqState = Object.assign({}, state);
       reqState.isLoading = true;
       reqState.status = LOADING;
       reqState.statusCode = 101;
 
       return reqState;
-    case REQUEST_LOGIN_SUCCESS: {
+    case GET_NOTES_SUCCESS: {
       let reqState = Object.assign({}, state);
       console.log("came to login success", action);
       reqState.isLoading = false;
-      reqState.statusCode = action.data.data.status_code;
+      reqState.statusCode = action.data.data.statusCode;
       if (reqState.statusCode === STATUS_CODE_SUCCESS) {
         reqState.status = SUCCESS;
-        reqState.user = action.data.data.user;
-        reqState.token = action.data.data.token;
-        localStorage.setItem("auth-token", action.data.data.token);
+        reqState.list = action.data.data.taskList;
         reqState.error = false;
       }
       reqState.error = true;
@@ -40,7 +38,7 @@ export default function loginReducer(state = initialState, action) {
 
       return reqState;
     }
-    case REQUEST_LOGIN_FAILED: {
+    case GET_NOTES_FAILED: {
       let reqState = Object.assign({}, state);
       reqState.isLoading = true;
       reqState.status = ERROR;

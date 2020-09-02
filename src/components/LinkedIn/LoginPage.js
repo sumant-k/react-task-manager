@@ -36,6 +36,7 @@ const LoginPage = (props) => {
                 type={toggle ? "text" : "password"}
                 required
                 name={"password"}
+                autoComplete={"new-password"}
               />
               <label htmlFor={"passwd"}>Password </label>
               <span
@@ -51,8 +52,9 @@ const LoginPage = (props) => {
                 className={"btn signup-btn"}
                 id={"submit"}
                 type={"submit"}
+                disabled={props.isLoading}
               >
-                Sign In
+                {props.isLoading ? "Signing in..." : "Sign In"}
               </button>
             </div>
           </form>

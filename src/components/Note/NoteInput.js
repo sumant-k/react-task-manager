@@ -97,7 +97,7 @@ const NoteInput = (props) => {
               }
             `}
             className={"input"}
-            placeholder={"Note..."}
+            placeholder={"Task..."}
             autoFocus
             rows={10}
           />

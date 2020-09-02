@@ -29,20 +29,35 @@ instance.interceptors.response.use(
     return new Promise((resolve, reject) => reject(error));
   }
 );
-
+const getToken = () => {
+  return new Promise((resolve, reject) => {
+    let token = localStorage.getItem("auth-token");
+    if (!token) {
+      reject("Token is not present");
+    }
+    resolve(token);
+  });
+};
 export default class Service {
   static getCall(url) {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(url)
-        .then((response) => {
-          console.info("response---->", JSON.stringify(response));
-          resolve(response);
-        })
-        .catch((e) => {
-          console.info("error response---->", JSON.stringify(e));
-          reject(e);
-        });
+    return getToken().then((token) => {
+      return new Promise((resolve, reject) => {
+        let config = {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        };
+        instance
+          .get(url, config)
+          .then((response) => {
+            console.info("response---->", JSON.stringify(response));
+            resolve(response);
+          })
+          .catch((e) => {
+            console.info("error response---->", JSON.stringify(e));
+            reject(e);
+          });
+      });
     });
   }
   static postCall(url, data) {

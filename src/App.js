@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import "./Normalize.css";
 import ProtectedRoute from "./Containers/Routes/ProtectedRoute";
-import Note from "./Containers/Note";
+import Task from "./Containers/Task";
 import { BrowserRouter, Route } from "react-router-dom";
 import Login from "./Containers/Login";
 import DuckDuckGo from "./components/DuckDuckGo/DuckDuckGo";
@@ -12,7 +12,7 @@ function App() {
     <React.Fragment>
       <BrowserRouter>
         <Route path={"/"} exact component={Login} />
-        {/*<ProtectedRoute path={"/notes"} Component={Note} />*/}
+        <Route path={"/notes"} component={Task} exact />
         {/*<DuckDuckGo />*/}
       </BrowserRouter>
     </React.Fragment>

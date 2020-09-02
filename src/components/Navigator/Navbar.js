@@ -20,7 +20,7 @@ const Navbar = (props) => {
           className="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav">
             <li className="nav-item active">
               <a className="nav-link" href="#">
                 Home <span className="sr-only">(current)</span>
@@ -67,7 +67,8 @@ const Navbar = (props) => {
               </a>
             </li>
           </ul>
-          <button className="btn signup-btn" type="submit">
+
+          <button className="ml-2 btn signup-btn" type="submit">
             Sign Up
           </button>
         </div>

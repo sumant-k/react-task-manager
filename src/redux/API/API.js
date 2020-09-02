@@ -5,7 +5,7 @@ export const makePostRequest = (url, data) => {
   return Service.postCall(url, data);
 };
 export const makeGetRequest = (url) => {
-  return Service.postCall(url);
+  return Service.getCall(url);
 };
 export const makeSecurePostRequest = (url, data) => {
   return SecureService.postCall(url, data);

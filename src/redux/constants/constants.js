@@ -1,7 +1,10 @@
 export const LOADING = "LOADING";
 export const SUCCESS = "SUCCESS";
+export const STATUS_CODE_SUCCESS = 10;
+export const STATUS_CODE_ERROR = 11;
 export const ERROR = "ERROR";
 export const BASE_URL = "https://task-manager-api-demo.herokuapp.com";
 let URI = {};
 URI.login = BASE_URL + "/users/login";
+URI.notes = BASE_URL + "/tasks";
 export const API_ENDPOINT = URI;
