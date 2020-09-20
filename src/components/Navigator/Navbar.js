@@ -1,21 +1,23 @@
 import * as React from "react";
-const Navbar = (props) => {
+const Navbar = props => {
   return (
     <React.Fragment>
       {/* Image and text */}
 
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          <img
-            src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg"
-            width={30}
-            height={30}
-            className="d-inline-block align-top mr-2"
-            alt=""
-            loading="lazy"
-          />
-          Task Manager
-        </a>
+        <div>
+          <a className="navbar-brand" href="#">
+            <img
+              src="images/logo_wide.png"
+              width={120}
+              height={50}
+              className="d-inline-block align-top mr-2"
+              alt=""
+              loading="lazy"
+            />
+          </a>
+        </div>
+        {/* <div style={{ color: "black" }}>WriTe</div> */}
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
