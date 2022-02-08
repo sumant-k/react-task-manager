@@ -2,6 +2,7 @@ import * as React from "react";
 import "./LoginPage.css";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const LoginPage = (props) => {
   const { errors, register, handleSubmit } = useForm();
@@ -58,6 +59,13 @@ const LoginPage = (props) => {
               </button>
             </div>
           </form>
+          <br />
+          <br />
+          <Link to={"/notes"}>
+            <button className={"btn signup-btn"} type={"button"}>
+              Skip and See Notes
+            </button>
+          </Link>
         </div>
       </div>
     </React.Fragment>

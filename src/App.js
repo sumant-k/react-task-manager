@@ -13,7 +13,6 @@ function App() {
       <BrowserRouter>
         <Route path={"/"} exact component={Login} />
         <Route path={"/notes"} component={Task} exact />
-        {/*<DuckDuckGo />*/}
       </BrowserRouter>
     </React.Fragment>
   );

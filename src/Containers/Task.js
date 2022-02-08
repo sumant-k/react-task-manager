@@ -6,10 +6,10 @@ import { useEffect } from "react";
 
 const Task = (props) => {
   const dispatch = useDispatch();
-  const response = useSelector(
+  const reduxState = useSelector(
     (state) => ({
       isLoading: state.getNotesReducer.isLoading,
-      tasks: state.getNotesReducer.list,
+      tasks: state.getNotesReducer.noteList ?? [],
       statusCode: state.getNotesReducer.statusCode,
     }),
     shallowEqual
@@ -18,10 +18,37 @@ const Task = (props) => {
     dispatch(requestNotes());
   }, []);
 
-  console.log("[state] task", response);
   return (
     <React.Fragment>
       <NoteInput />
+      <div
+        className="container"
+        style={{
+          color: "black",
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        {reduxState.tasks.slice(0, 5).map((card) => (
+          <div style={{ margin: "1rem 2rem" }}>
+            <div className="card">
+              <h5 className="card-header">{card.title}</h5>
+              <div className="card-body">
+                <h5 className="card-title">
+                  {card.completed
+                    ? "This is task is completed"
+                    : "This is task is not completed"}
+                </h5>
+
+                <a href="#" className="btn btn-primary">
+                  Build Task Details Page
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </React.Fragment>
   );
 };

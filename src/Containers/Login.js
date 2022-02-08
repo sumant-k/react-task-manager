@@ -19,7 +19,7 @@ const Login = (props) => {
     userToken: state.loginReducer.token,
     statusCode: state.loginReducer.statusCode,
   }));
-  console.log("[state] Login", response);
+
   useEffect(() => {
     if (response.statusCode === STATUS_CODE_SUCCESS) {
       props.history.push("/notes");

@@ -25,15 +25,9 @@ export default function getNotesReducer(state = initialState, action) {
       return reqState;
     case GET_NOTES_SUCCESS: {
       let reqState = Object.assign({}, state);
-      console.log("came to login success", action);
       reqState.isLoading = false;
-      reqState.statusCode = action.data.data.statusCode;
-      if (reqState.statusCode === STATUS_CODE_SUCCESS) {
-        reqState.status = SUCCESS;
-        reqState.list = action.data.data.taskList;
-        reqState.error = false;
-      }
-      reqState.error = true;
+      reqState.noteList = action.data.data;
+      
       reqState.errorMessage = false;
 
       return reqState;

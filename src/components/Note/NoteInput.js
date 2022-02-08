@@ -57,8 +57,7 @@ const NoteInput = (props) => {
     color${getStyle().placeHolderColor}
   }
 `;
-  console.log("asasasas=> ", JSON.stringify(getStyle()));
-  console.log("[selected color]", selectedColor);
+
   return (
     <React.Fragment>
       <div className={"note"}>

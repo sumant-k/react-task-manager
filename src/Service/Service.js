@@ -13,7 +13,6 @@ if (!instance) {
 
 instance.interceptors.request.use(
   function (config) {
-    console.log("request===>", config);
     return config;
   },
   function (error) {
@@ -22,7 +21,6 @@ instance.interceptors.request.use(
 );
 instance.interceptors.response.use(
   function (config) {
-    console.log("response===>", config);
     return config;
   },
   function (error) {
@@ -40,25 +38,19 @@ const getToken = () => {
 };
 export default class Service {
   static getCall(url) {
-    return getToken().then((token) => {
-      return new Promise((resolve, reject) => {
-        let config = {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        };
-        instance
-          .get(url, config)
-          .then((response) => {
-            console.info("response---->", JSON.stringify(response));
-            resolve(response);
-          })
-          .catch((e) => {
-            console.info("error response---->", JSON.stringify(e));
-            reject(e);
-          });
-      });
+    return new Promise((resolve, reject) => {
+      instance
+        .get(url)
+        .then((response) => {
+          console.info("response---->", JSON.stringify(response));
+          resolve(response);
+        })
+        .catch((e) => {
+          console.info("error response---->", JSON.stringify(e));
+          reject(e);
+        });
     });
+    // });
   }
   static postCall(url, data) {
     return new Promise((resolve, reject) => {

@@ -13,7 +13,6 @@ if (!instance) {
 
 instance.interceptors.request.use(
   function (config) {
-    console.log("request===>", config);
     return config;
   },
   function (error) {
@@ -22,7 +21,6 @@ instance.interceptors.request.use(
 );
 instance.interceptors.response.use(
   function (config) {
-    console.log("response===>", config);
     return config;
   },
   function (error) {

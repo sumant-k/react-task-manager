@@ -25,7 +25,6 @@ export default function loginReducer(state = initialState, action) {
       return reqState;
     case REQUEST_LOGIN_SUCCESS: {
       let reqState = Object.assign({}, state);
-      console.log("came to login success", action);
       reqState.isLoading = false;
       reqState.statusCode = action.data.data.status_code;
       if (reqState.statusCode === STATUS_CODE_SUCCESS) {
